@@ -22,9 +22,8 @@ Visual Studio Code
 *movies.csv*: original flat file containing movie data in CSV format. 
 
 *requirements.txt*: file with required packages in order to run populate.py. 
-### **Relational Model**
 
-### **Data Definition Language**
+## **Data Definition Language**
 
 ### **TABLES**
 
