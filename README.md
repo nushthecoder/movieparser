@@ -30,7 +30,7 @@ Visual Studio Code
 movies
 ------
 ```
-CREATE TABLE movies (
+CREATE TABLE movies(
 	movie_id SERIAL PRIMARY KEY,
 	movie_title VARCHAR(400),
     movie_description VARCHAR (1000),
@@ -48,7 +48,7 @@ CREATE TABLE movies (
 actor_ref
 ---------
 ```
-CREATE TABLE actor_ref (
+CREATE TABLE actor_ref(
 	actor_id SERIAL PRIMARY KEY,
 	first_name VARCHAR(200),
     middle_name VARCHAR (200) NULL,
@@ -59,7 +59,7 @@ CREATE TABLE actor_ref (
 genre_ref
 --------
 ```
-CREATE TABLE genre_ref (
+CREATE TABLE genre_ref(
 	genre_id SERIAL PRIMARY KEY,
 	genre VARCHAR (100)
 )
@@ -68,7 +68,7 @@ CREATE TABLE genre_ref (
 director_ref
 -----------
 ```
-CREATE TABLE director_ref (
+CREATE TABLE director_ref(
 	director_id SERIAL PRIMARY KEY,
 	first_name VARCHAR(200),
 	middle_name VARCHAR (200) NULL,
@@ -86,7 +86,7 @@ movie_actor
 1. *movie_id from movies table*
 2. *actor_id from actor_ref*
 ```
-CREATE TABLE movie_actor (
+CREATE TABLE movie_actor(
 	movie_id INT,
 	actor_id INT,
 	PRIMARY KEY (movie_id, actor_id)
@@ -109,7 +109,7 @@ movie_genre
 1. *movie_id from movies table*
 2. *genre_id from genre_ref*
 ```
-CREATE TABLE movie_genre (
+CREATE TABLE movie_genre(
 	movie_id INT,
 	genre_id INT,
 	PRIMARY KEY (movie_id, genre_id),
@@ -133,7 +133,7 @@ movie_director
 2. *director_id from director_ref*
 
 ```
-CREATE TABLE movie_director (
+CREATE TABLE movie_director(
 	movie_id INT,
 	director_id INT,
 	PRIMARY KEY (movie_id, director_id),
