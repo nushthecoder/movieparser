@@ -3,12 +3,10 @@
 3) Give me a list of genres by movie 
 4) Give me a list of directors by movie 
 5) Give me a rating, revenue of each movie 
-6) Give me a list of actors that appear in multiple movies (tricky, I don't even know how to do this yet) 
-7) Give me a list of directors that appear in multiple movies 
-8) Give me movie details, actors, directors, genres for a random Movie Id. 
-9) Give me a count of unique actors 
-10) Give me a count of unique Genres 
-11) Give me a count of unique Directors 
+6) Give me a count of unique actors 
+7) Give me a count of unique Genres 
+8) Give me a count of unique Directors 
+9) Give me movies with a rating greater than 4.0
 
 
 1. SELECT COUNT(*) FROM movies;
@@ -48,13 +46,10 @@
 	    ON b.director_id = c.director_id;
 
 5. SELECT movie_title, rating, revenue_millions FROM movies;
-6.
-7.
-8.
-9. SELECT COUNT(*) FROM actor_ref;
-10. SELECT COUNT(*) FROM genre_ref;
-11. SELECT COUNT(*) FROM director_ref;  
+6. SELECT COUNT(*) FROM actor_ref;
+7. SELECT COUNT(*) FROM genre_ref;
+8. SELECT COUNT(*) FROM director_ref;  
 
-12. SELECT movie_title, rating
+9. SELECT movie_title, rating
     FROM movies
     WHERE rating > 4.0;

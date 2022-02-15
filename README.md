@@ -48,7 +48,7 @@ CREATE TABLE movies (
 actor_ref
 ---------
 ```
-CREATE TABLE actor_reference_table (
+CREATE TABLE actor_ref_table (
 	actor_id SERIAL PRIMARY KEY,
 	first_name VARCHAR(200),
     middle_name VARCHAR (200) NULL,
@@ -59,7 +59,7 @@ CREATE TABLE actor_reference_table (
 genre_ref
 --------
 ```
-CREATE TABLE genre_reference_table (
+CREATE TABLE genre_ref_table (
 	genre_id SERIAL PRIMARY KEY,
 	genre VARCHAR (100)
 )
@@ -68,7 +68,7 @@ CREATE TABLE genre_reference_table (
 director_ref
 -----------
 ```
-CREATE TABLE director_reference_table (
+CREATE TABLE director_ref_table (
 	director_id SERIAL PRIMARY KEY,
 	first_name VARCHAR(200),
 	middle_name VARCHAR (200) NULL,
@@ -95,7 +95,7 @@ CREATE TABLE movie_actor (
 			REFERENCES movies(movie_id)
 	CONSTRAINT fk_actor
 		FOREIGN KEY(actor_id)
-			REFERENCES actor_reference_table(actor_id)
+			REFERENCES actor_ref_table(actor_id)
 
 )
 ```
@@ -118,7 +118,7 @@ CREATE TABLE movie_genre (
 			REFERENCES movies(movie_id),
 	CONSTRAINT fk_genre
 		FOREIGN KEY (genre_id)
-			REFERENCES genre_reference_table(genre_id)
+			REFERENCES genre_ref_table(genre_id)
 
 )
 ```
@@ -142,7 +142,7 @@ CREATE TABLE movie_director (
 			REFERENCES movies(movie_id),
 	CONSTRAINT fk_director
 		FOREIGN KEY(director_id)
-			REFERENCES director_reference_table(director_id)
+			REFERENCES director_ref_table(director_id)
 )
 ```
 
@@ -204,19 +204,19 @@ SELECT a.movie_title,
 	    ON b.director_id = c.director_id;
 ```
 
-#### Unique list of actors
+#### List of actors
 
 ```
 SELECT actor_id, first_name, middle_name, last_name FROM actor_ref;
 ```
 
-#### Unique list of directors
+#### List of directors
 
 ```
 SELECT director_id, first_name, middle_name, last_name FROM director_ref;
 ```
 
-#### Unique list of genres
+#### List of genres
 
 ```
 SELECT genre_id, genre FROM genre_ref;
