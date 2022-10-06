@@ -3,7 +3,7 @@
 
 ### **Description**
 
-This parser extracts raw data from a CSV file and prepares the data to popualate the relational database.
+This parser extracts raw data from a CSV file and prepares the data to populate the relational database.
 
 ### **Technology Stack**
 
